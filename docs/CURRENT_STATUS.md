@@ -1,68 +1,58 @@
-# Current Status
+# Current technical status
 
-## Phase
+## EquiSim reference extraction
 
-**Phase 0B — source/data gates before production anatomy**
+I have completed a local reproduction of the EquiSim zero-PC reference.
 
-Detailed Blender production modeling is intentionally deferred until the source and registration questions that matter to the anatomy are resolved.
+The workflow reconstructs ten named components while retaining the source coordinate system and relative placement:
 
-## Completed
+| Component | EquiSim name |
+| --- | --- |
+| Third metacarpal | `cannon` |
+| Second metacarpal | `mc2` |
+| Fourth metacarpal | `mc4` |
+| P1 | `longpastern` |
+| Proximal sesamoid | `sesamoidleft` |
+| Proximal sesamoid | `sesamoidright` |
+| P2 | `shortpastern` |
+| P3 | `coffin` |
+| Navicular bone | `navicular` |
+| Hoof capsule | `hoofcapsule` |
 
-### EquiSim extraction and verification
+The source linear units are centimeters. The source frame is right-handed; in the reconstructed reference, X is roughly dorsal-palmar, Y is proximodistal with positive Y toward the ground, and Z is mediolateral.
 
-The project has reproducibly extracted ten named components from the zero-PC EquiSim reference:
+I have also checked the extracted meshes for component identity, placement, topology, and plausible scale.
 
-1. cannon / MC3
-2. MC2
-3. MC4
-4. long pastern / P1
-5. left proximal sesamoid
-6. right proximal sesamoid
-7. short pastern / P2
-8. coffin bone / P3
-9. navicular / distal sesamoid
-10. hoof capsule
+## What this does and does not establish
 
-The extraction preserves relative placement, source orientation, component identity, and scale.
+This gives the project a reproducible hard-tissue reference.
 
-### Units and orientation
+It does **not** establish:
 
-The verified EquiSim source uses:
+- a specimen-specific foot;
+- a complete soft-tissue model;
+- an "ideal" hoof;
+- permission to redistribute converted EquiSim geometry.
 
-- linear coordinates in centimeters;
-- angular values in radians;
-- a retained right-handed source coordinate frame;
-- X approximately sagittal, with dorsal/toe and palmar/heel direction;
-- Y proximodistal, positive toward the ground/distal direction;
-- Z mediolateral.
+The statistical reference is population-derived, not a single measured horse.
 
-### Provenance rules
+## Soft-tissue work
 
-The project has formalized three evidence classes:
-
-- measured / segmented;
-- registered / reconstructed;
-- teaching representation.
-
-## Open gates
-
-### Soft tissue
-
-The central technical gap is still high-confidence soft-tissue anatomy, especially:
+The structures I most need to resolve next are:
 
 - digital cushion;
-- collateral / ungular cartilages;
-- associated caudal-foot structures;
-- other structures needed for a complete teaching view.
+- collateral/ungular cartilages;
+- DDFT/navicular-region relationships where the source material supports them;
+- additional caudal-foot structures needed for teaching.
 
-### EquiSim redistribution
+The preferred source is a same-foot multimodal dataset in which CT and MRI registration can be recovered or checked.
 
-The repository and paper strongly suggest the statistical model was intended as part of the open-source EquiSim release, but the project is not publicly redistributing converted EquiSim geometry until the license scope for model data and derivatives is explicit.
+## Data rights
 
-### Auburn legacy assets
+I am using EquiSim-derived geometry only in private/local development until I have a clear answer on whether the repository's MIT license was intended to cover the statistical model data and converted derivatives.
 
-Historical Auburn CT/MRI + Mimics reconstruction work is being investigated as a possible same-project source for internal soft-tissue anatomy.
+The same rule will apply to any Auburn material: anatomical usefulness and permission to redistribute are separate questions.
 
-## What would move the project forward most
+## Next technical milestone
 
-A well-documented file set containing original imaging plus preserved segmentation/registration state would be substantially more valuable than standalone STL/OBJ files with uncertain provenance.
+The next meaningful milestone is not more mesh cleanup. It is establishing a soft-tissue source with known specimen identity, modality, segmentation history, registration, and reuse terms.
