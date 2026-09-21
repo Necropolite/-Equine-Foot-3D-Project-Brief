@@ -1,80 +1,54 @@
-# Equine Foot 3D — Project Brief
+# Equine Foot 3D
 
-A source-grounded 3D teaching model of the equine foot.
+This repository is a short technical summary of an independent 3D equine-foot project I am developing for teaching and visualization.
 
-This repository is the **shareable collaborator-facing brief** for a larger private working project. It is meant to let anatomists, imaging researchers, hoof-care educators, and technical collaborators understand the project quickly without exposing restricted source data or internal scratch work.
+My background is in software and computing rather than veterinary anatomy. The point of the project is not to invent anatomy, but to build a model whose geometry can be traced back to imaging, published work, or an explicitly documented reconstruction.
 
-## The goal
+## Project aim
 
-Build an interactive equine-foot model that can:
+The end product is intended to be an interactive 3D foot in which structures can be isolated, hidden, made transparent, sectioned, and labeled. The first useful version would include the hoof capsule, P2, P3, navicular bone, digital cushion, collateral/ungular cartilages, and the main external structures of the solar and caudal foot.
 
-- show, hide, isolate, and make anatomical structures transparent;
-- preserve anatomically coherent spatial relationships;
-- distinguish directly measured anatomy from reconstructed teaching geometry;
-- support cutaways, labels, and comparison views;
-- eventually export to GLB and run in a browser without requiring Blender.
+The model will ultimately be exported for browser viewing so that it does not depend on Blender or specialist software.
 
-## Core modeling rule
+## Current work
 
-The model should not be assembled by taking unrelated structures from different horses and forcing them together.
+I have been using EquiSim as a provisional hard-tissue reference because it provides a coherent statistical model of the distal limb rather than unrelated meshes assembled by eye. I reproduced the zero-PC reference and verified the component mapping, scale, source axes, and relative placement for ten components, including P2, P3, navicular bone, and the hoof capsule.
 
-Whenever possible, the project prefers one coherent specimen or registered dataset. If a structure must be reconstructed from external references, that uncertainty remains explicit.
+I am not treating that model as a single measured horse. It is a population-derived statistical reference, and I am not redistributing converted EquiSim geometry while the scope of the data license remains unclear.
 
-## Geometry confidence classes
+The main unresolved part of the project is soft tissue. In particular, I need a defensible source for the digital cushion and collateral/ungular cartilages, ideally from CT and MRI belonging to the same foot and retained in a common coordinate system.
 
-Every anatomical object is classified as one of:
+## Auburn work
 
-1. **measured / segmented** — directly derived from source imaging or a measured dataset;
-2. **registered / reconstructed** — rebuilt from credible references and fitted into a known spatial frame;
-3. **teaching representation** — intentionally illustrative and not claimed to be specimen-measured.
+The 2009 Auburn CT/MRI reconstruction project is especially relevant because it used Mimics to reconstruct P3, collateral cartilages, and the digital cushion, with the CT and MR datasets aligned at the palmar-process foramina.
 
-## Current status
+A later 2013 Auburn project used CT, MRI, ultrasound, radiography, and physical measurements in thirteen left front Thoroughbred cadaver feet and also produced 3D reconstructions of heel structures.
 
-The project has:
+For this project, the most useful surviving material would be original DICOM data and Mimics projects with enough provenance to determine which specimen, modality, segmentation, and registration each file belongs to. STL/OBJ exports are useful as well, but the source projects are more informative if they still preserve masks, labels, measurements, or registration.
 
-- completed a Phase 0 source/dataset audit;
-- verified a population-derived hard-anatomy reference from EquiSim;
-- preserved ten named hard-anatomy components in a coherent coordinate system;
-- documented units, orientation, transforms, topology, and provenance;
-- identified soft-tissue anatomy as the main remaining data gap;
-- identified historical Auburn CT/MRI + Mimics reconstruction work as a particularly valuable potential source.
+See [Auburn data context](docs/AUBURN_ASSET_CONTEXT.md).
 
-No production teaching model has been declared anatomically validated yet.
+## How I am handling uncertainty
 
-## Why the Auburn work matters
+I am keeping three categories separate:
 
-Historical Auburn work reconstructed structures including P3, the digital cushion, and collateral/ungular cartilages using CT, MRI, and Mimics. CT and MR datasets were aligned using anatomical landmarks.
+- **directly segmented/measured** — geometry derived from known source imaging or measurements;
+- **registered/reconstructed** — geometry built from references and fitted into a known spatial frame;
+- **teaching geometry** — deliberately simplified or illustrative material.
 
-If original source imaging and segmentation projects can be recovered with clear provenance, they may provide exactly the kind of coherent soft-tissue evidence this project is designed around.
+I also keep anatomical confidence separate from reuse permission. A dataset may be excellent scientifically and still not be something I am allowed to publish.
 
-See [Auburn Asset Context](docs/AUBURN_ASSET_CONTEXT.md).
+## Repository contents
 
-## What is intentionally not in this repository
+- [Project overview](docs/PROJECT_OVERVIEW.md)
+- [Current technical status](docs/CURRENT_STATUS.md)
+- [Anatomy in scope](docs/ANATOMY_SCOPE.md)
+- [Data handling and provenance](docs/DATA_AND_PROVENANCE.md)
+- [Auburn data context](docs/AUBURN_ASSET_CONTEXT.md)
+- [Validation approach](docs/VALIDATION_MODEL.md)
+- [Development roadmap](docs/ROADMAP.md)
+- [References](CITATIONS.md)
 
-This public brief does **not** contain:
+This public repository intentionally contains no raw imaging, Mimics projects, unpublished research files, private correspondence, or restricted 3D data.
 
-- raw DICOM;
-- Mimics project files;
-- unpublished institutional data;
-- restricted or unlicensed meshes;
-- private correspondence;
-- EquiSim-derived geometry pending license clarification;
-- learner/patient/specimen identifiers;
-- speculative anatomy presented as established.
-
-## Important project framing
-
-This is an independent hobby/research-development project by Clint Ramey.
-
-Pete Ramey is not currently developing the project, and this repository does not imply endorsement by Pete Ramey, Auburn University, Ray Wilhite, or any other institution or researcher.
-
-## Start here
-
-- [Project Overview](docs/PROJECT_OVERVIEW.md)
-- [Current Status](docs/CURRENT_STATUS.md)
-- [Anatomy Scope](docs/ANATOMY_SCOPE.md)
-- [Data and Provenance](docs/DATA_AND_PROVENANCE.md)
-- [Auburn Asset Context](docs/AUBURN_ASSET_CONTEXT.md)
-- [Validation Model](docs/VALIDATION_MODEL.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Citations](CITATIONS.md)
+— Clint Ramey
