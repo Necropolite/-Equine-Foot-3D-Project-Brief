@@ -1,62 +1,56 @@
-# Auburn Asset Context
+# Auburn data context
 
-## 2009 palmar-foot reconstruction work
+## 2009 CT/MRI reconstruction project
 
-Auburn research presented as:
+The 2009 Auburn presentation, *Evaluating Soft Tissue Composition of the Equine Palmar Foot with CT, MRI, and 3-D Reconstruction*, lists Adam W. Cooner, D. Ray Wilhite, John T. Hathcock, Pete Ramey, Ivy Ramey, and Debra R. Taylor.
 
-**Evaluating Soft Tissue Composition of the Equine Palmar Foot with CT, MRI, and 3-D Reconstruction**
+The study used three cadaver forefeet. The presentation describes:
 
-Authors:
+- photographs and lateral radiographs;
+- high-resolution CT;
+- MRI;
+- manual isolation of collateral cartilages from CT;
+- digital-cushion segmentation from MR images;
+- an estimated fibrocartilage component derived with a grayscale-mask approach;
+- P3 isolation using a bone algorithm;
+- 3D reconstruction in Mimics;
+- CT/MR alignment at the palmar-process foramina.
 
-- Adam W. Cooner
-- D. Ray Wilhite
-- John T. Hathcock
-- Pete Ramey
-- Ivy Ramey
-- Debra R. Taylor
+Volumes were reported for P3, collateral cartilage, digital cushion, and estimated digital-cushion fibrocartilage.
 
-The project used three cadaver forefeet and collected photographs, lateral radiographs, high-resolution CT, and MRI.
+The presentation is useful to this project mainly because it documents a multimodal reconstruction workflow. With only three feet, it should not be treated as population-level evidence.
 
-According to the research presentation:
+## 2013 predictive-heel project
 
-- collateral cartilages were manually isolated from CT;
-- digital cushion was isolated from MR images;
-- digital-cushion fibrocartilage was estimated with a grayscale-mask approach;
-- P3 was isolated using a bone algorithm;
-- 3D models were built in Mimics;
-- CT and MR data were aligned using the palmar-process foramina;
-- volumes were recorded for P3, collateral cartilage, digital cushion, and estimated fibrocartilage.
+The later Auburn poster, *Predictive Modeling of the Equine Heel*, reports work on thirteen left front Thoroughbred cadaver feet.
 
-The authors explicitly treated the three-foot project as exploratory rather than statistically definitive.
+The study used CT, MRI, ultrasound, radiography, physical measurements, and 3D reconstruction. The poster describes reconstructed digital cushion, collateral cartilages, and P2, among other measurements.
 
-## Why these files are unusually valuable to this project
+For this project, that raises the possibility that a larger set of multimodal source data or Mimics projects may have existed beyond the original three-foot pilot.
 
-If the original data survive, they may preserve:
+## What would be most useful to recover
 
-- original CT DICOM;
-- original MRI DICOM;
-- Mimics masks/segmentations;
-- CT/MRI registration state;
-- measurements;
-- structure labels;
-- STL/OBJ exports tied back to the source project.
+In order of value for this project:
 
-That would potentially allow the project to distinguish directly segmented anatomy from later reconstruction rather than relying only on visual fitting.
+1. original CT and MRI DICOM series with specimen mapping;
+2. original Mimics project files;
+3. mask/segmentation labels and registration state;
+4. notes or measurements that identify structures and methodology;
+5. STL/OBJ exports tied back to a specific project and specimen.
 
-## 2013 predictive-heel work
+The original project files matter because they may retain information that an STL/OBJ export does not: source series, masks, labels, measurements, and registration.
 
-A later Auburn research poster, **Predictive Modeling of the Equine Heel**, used thirteen left front Thoroughbred cadaver feet and incorporated CT, MRI, ultrasonography, radiography, physical measurements, and 3D reconstructions including the digital cushion, collateral cartilages, and P2.
+## Questions I would want to answer for each surviving project
 
-## Questions the project hopes to resolve
+- Which study did this file set belong to?
+- Which specimen and limb?
+- Are the CT and MRI series from the same foot?
+- Which structures were directly segmented?
+- Which were estimated or reconstructed?
+- How was CT/MRI registration performed?
+- Is the registration still preserved in the Mimics project?
+- Were any meshes rescaled or repositioned after export?
+- What Mimics version created the project?
+- What use, modification, and redistribution are permitted?
 
-For any surviving Auburn file set:
-
-- which study/project does it belong to?
-- which specimen does each file represent?
-- are CT and MRI from the same foot?
-- which structures were segmented directly?
-- which structures were estimated?
-- how exactly was registration performed?
-- is registration preserved in Mimics?
-- what version of Mimics created the project?
-- what may be copied, modified, and redistributed?
+The goal is to preserve enough context that the files can be used correctly rather than simply imported because they are available.
