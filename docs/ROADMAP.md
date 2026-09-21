@@ -1,61 +1,49 @@
-# Roadmap
+# Development roadmap
 
-## Phase 0 — source audit
+## 1. Establish the reference data
 
-Status: substantially complete.
+Current work.
 
-- define modeling rules;
-- inventory candidate datasets;
-- choose provisional hard-anatomy framework;
-- establish provenance and confidence classes.
+- keep the verified EquiSim hard-tissue extraction reproducible;
+- resolve the reuse status of EquiSim model data;
+- identify the best available soft-tissue source;
+- recover same-foot CT/MRI and original segmentation projects where possible;
+- document specimen identity, units, orientation, registration, and reuse terms.
 
-## Phase 0B — remaining data gates
+## 2. Build the first anatomical dataset
 
-Status: active.
+- preserve original source files;
+- create a specimen/project manifest;
+- import or segment the required structures;
+- verify coordinate relationships;
+- classify each object as directly segmented, reconstructed, or teaching geometry.
 
-- maintain verified EquiSim hard-anatomy extraction;
-- resolve public redistribution scope for EquiSim-derived geometry;
-- recover or identify a reusable soft-tissue source;
-- prioritize same-foot CT/MRI and preserved registration;
-- document permission boundaries.
+## 3. Produce teaching geometry
 
-## Phase 1 — master anatomical dataset
+- clean meshes only after the source relationships are established;
+- add external structures that are not available directly from imaging;
+- retain separate anatomical objects;
+- preserve a record of every transform and reconstruction decision.
 
-- select the final reference dataset/configuration;
-- ingest source files without altering originals;
-- create specimen/project manifest;
-- verify units/orientation;
-- segment or import source structures;
-- preserve registration;
-- establish anatomy confidence for every object.
+## 4. Review
 
-## Phase 2 — production anatomy
+- inspect technical alignment and topology;
+- cross-check anatomy against independent sources;
+- obtain domain review of teaching-critical relationships;
+- revise before freezing the first reference version.
 
-- clean/retopologize where needed without changing anatomical meaning;
-- model external hoof structures not directly available;
-- add registered reconstructed structures only with explicit provenance;
-- keep each structure independently controllable.
+## 5. Build the viewer
 
-## Phase 3 — expert review
-
-- review teaching-critical spatial relationships;
-- correct errors;
-- document disagreements or uncertainty;
-- freeze first teaching reference version.
-
-## Phase 4 — interactive viewer
-
-- export structured GLB;
-- browser viewer;
+- structured GLB export;
+- browser-based viewing;
 - labels;
-- visibility/isolation controls;
+- show/hide/isolate controls;
 - transparency;
-- clipping/cutaway views.
+- section/cutaway tools;
+- later, measurements and comparison views if they are useful.
 
-## Phase 5 — comparison models
+## 6. Add comparison models
 
-Only after the reference model is stable:
+Only after the reference foot is stable.
 
-- clinically/educationally meaningful variants;
-- development/rehabilitation comparisons;
-- explicitly separate measured evidence from illustrative variants.
+Possible later work includes different caudal-foot development, hoof-capsule configurations, laminitic changes, and rehabilitation-stage comparisons. Those should remain explicitly separate from the reference model.
