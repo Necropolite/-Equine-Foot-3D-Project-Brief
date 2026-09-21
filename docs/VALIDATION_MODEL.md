@@ -1,43 +1,56 @@
-# Validation Model
+# Validation approach
 
-## Validation is layered
+The project uses several checks rather than a single visual judgment.
 
-The project does not use a single "looks right" judgment.
+## 1. Source check
 
-### 1. Source validation
+Before using geometry, establish:
 
-Confirm source identity, specimen/population identity, imaging or measurement method, file provenance, units, orientation, and reuse terms.
+- source project or publication;
+- specimen/population;
+- imaging or measurement method;
+- units and orientation;
+- file provenance;
+- reuse terms.
 
-### 2. Technical geometry validation
+## 2. Geometry check
 
-Check transforms, scale, axis orientation, component identity, topology, normals, watertightness where appropriate, and preservation of relative placement.
+For imported or converted meshes, check:
 
-### 3. Registration validation
+- scale;
+- transforms;
+- axis orientation;
+- component identity;
+- normals/winding;
+- topology;
+- preservation of relative placement.
 
-For multimodal or reconstructed anatomy:
+## 3. Registration check
+
+When CT and MRI or separately reconstructed structures are combined:
 
 - identify the registration method;
-- verify landmarks or fiducials;
-- inspect alignment in more than one plane;
-- record residual uncertainty;
-- avoid undocumented manual placement.
+- inspect the anatomical landmarks or fiducials used;
+- check alignment in more than one plane;
+- preserve the transform where possible;
+- record any residual uncertainty.
 
-### 4. Cross-source anatomical validation
+## 4. Anatomical cross-check
 
-Use independent high-quality CT, MRI, anatomic slices, dissections, and published references to check plausibility.
+Independent CT, MRI, anatomic sections, dissections, and published references are used to test plausibility.
 
-External examples are validation references, not interchangeable geometry.
+Those sources are cross-checks unless their geometry is explicitly incorporated under a documented reconstruction method.
 
-### 5. Teaching validation
+## 5. Domain review
 
-Before a model is described as instruction-ready, teaching-critical anatomical relationships should be reviewed by a qualified domain expert where practical.
+Before a model is treated as teaching-ready, I want the relationships that matter most for instruction reviewed by someone with the relevant anatomy/hoof expertise.
 
-## Claims must match evidence
+## Claim discipline
 
-The project should never describe:
+A few rules I am using throughout the project:
 
-- a statistical mean as a single measured horse;
-- reconstructed anatomy as directly segmented;
-- a three-foot exploratory study as population proof;
-- an exported mesh as a source-of-truth object when the source DICOM/project is available;
-- a collaborator's willingness to help as institutional endorsement.
+- a statistical mean is not a single specimen;
+- a reconstructed structure is not a direct segmentation;
+- a three-foot exploratory project is not population proof;
+- a clean mesh is not automatically a trustworthy source;
+- willingness to share data is not the same as permission to publish it.
