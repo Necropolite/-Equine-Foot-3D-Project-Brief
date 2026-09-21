@@ -1,57 +1,56 @@
-# Anatomy Scope
+# Anatomy in scope
+
+The list below is the intended teaching scope, not a claim that all structures have already been modeled.
 
 ## External hoof
 
-Planned structures, where the available evidence justifies them:
-
-- hoof capsule / wall;
+- hoof wall/capsule;
 - sole;
 - frog;
 - central and collateral sulci;
 - bars;
 - heels;
-- white-line / lamellar region.
+- white-line/lamellar region.
 
 ## Bones
 
-Primary:
+Primary foot structures:
 
 - P3 / distal phalanx / coffin bone;
 - P2 / middle phalanx / short pastern;
 - navicular / distal sesamoid.
 
-Contextual distal-limb anatomy may also include P1 and metacarpal/sesamoid structures when useful for orientation.
+P1 and the more proximal distal-limb structures may remain in the model where they help with orientation.
 
 ## Caudal-foot soft tissue
 
-Priority structures:
+Highest priority:
 
 - digital cushion;
-- collateral / ungular cartilages;
-- deep digital flexor tendon;
-- navicular apparatus where adequately sourced;
-- related ligamentous structures where evidence is sufficient.
+- collateral/ungular cartilages;
+- deep digital flexor tendon in the distal foot;
+- navicular bursa and associated structures where the source data are adequate.
 
-## Additional internal anatomy
+## Later additions
 
-Potential later additions include:
+If the available source material supports them, later versions may include:
 
-- corium / lamellar tissues;
+- corium and lamellar tissues;
+- selected ligamentous structures;
 - vascular structures;
-- neural structures;
-- other structures that materially improve teaching.
+- neural structures.
 
-These should be added only if they can be sourced and represented responsibly.
+I would rather omit a structure than include one with poorly understood geometry and present it as measured anatomy.
 
-## Teaching variants
+## Comparison models
 
-Possible future comparison variants include:
+Once the reference model is stable, separate comparison models may be useful for teaching differences such as:
 
-- developed vs underdeveloped caudal foot;
-- contracted / underrun heel configurations;
+- caudal-foot development;
+- contracted or underrun heels;
 - distal descent;
 - hoof-capsule rotation;
-- laminitic configurations;
-- rehabilitation-stage comparisons.
+- laminitic change;
+- rehabilitation stages.
 
-These are **later comparison models**, not modifications that should silently redefine the reference foot.
+Those variants will be kept distinct from the reference model and labeled according to the evidence supporting them.
