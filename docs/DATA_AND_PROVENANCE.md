@@ -1,62 +1,71 @@
-# Data and Provenance
+# Data handling and provenance
 
-## Why provenance is central
+For this project, a mesh is useful only if I can explain where it came from and what happened to it before it reached the final model.
 
-A mesh is not automatically reliable anatomy merely because it looks realistic.
+## Minimum record for a source asset
 
-For every anatomical object, the project should be able to answer:
+For each imaging series, Mimics project, or exported mesh, I want to record:
 
-- where did this geometry come from?
-- what specimen, population, or statistical model does it represent?
-- what imaging or measurement method produced it?
-- what units and coordinate system does it use?
-- was it transformed after segmentation?
-- is it directly measured or reconstructed?
-- can it legally be modified and redistributed?
+- study/project;
+- specimen or population;
+- limb and laterality;
+- source modality;
+- units;
+- source orientation;
+- segmentation method, where known;
+- registration method, where applicable;
+- any later transforms or rescaling;
+- who supplied or created the file;
+- what use and redistribution are permitted.
 
-## Evidence classes
+## Working categories
 
-### Measured / segmented
+### Directly segmented/measured
 
-Use when geometry is directly derived from source imaging or measured data and the provenance is known.
+Used for geometry derived from known imaging or measured data.
 
-### Registered / reconstructed
+Example: a digital-cushion mask segmented from a specific MRI series.
 
-Use when anatomy is rebuilt from credible references and fitted into the spatial frame of a known reference.
+### Registered/reconstructed
 
-### Teaching representation
+Used for geometry reconstructed from other references and fitted to a known spatial framework.
 
-Use when geometry is intentionally simplified or illustrative.
+This may still be good teaching anatomy, but it should not be described as a direct segmentation from the reference specimen.
 
-## Source preservation
+### Teaching geometry
 
-Original source data should be kept unchanged.
+Used for deliberately simplified or illustrative structures.
 
-For acquired research files:
+## Original-file preservation
 
-1. preserve original folder structure;
-2. do not rename or reorganize the source copy;
-3. record source person/institution, date, project, and specimen mapping;
-4. compute file hashes;
-5. create a second backup;
-6. work from derivatives/copies;
-7. keep raw/restricted data out of public Git repositories.
+If I receive research data, I plan to keep an untouched source copy before opening, converting, or reorganizing anything.
 
-## Registration
+The intake process is:
 
-When CT and MRI are combined, the project needs to know how the two modalities were aligned.
+1. preserve the directory structure;
+2. record who supplied the data and when;
+3. calculate file hashes;
+4. make a second backup;
+5. create working copies for conversion or segmentation;
+6. keep raw or restricted data outside the public Git repository.
 
-Important questions include:
+This is especially important for older Mimics projects because saving them in a newer version may alter the only surviving copy.
 
-- same foot or different feet?
-- same pose?
-- anatomical landmarks or fiducials?
-- rigid or non-rigid registration?
-- registration preserved in the source project?
-- any post-export transformation?
+## CT/MRI registration
 
-## Reuse status is a separate axis
+For multimodal anatomy, "same foot" is necessary but not enough. I also need to know how the CT and MRI volumes were aligned.
 
-Anatomical confidence and legal permission are not the same thing.
+Useful information includes:
 
-A dataset may be scientifically excellent but not redistributable. The project records both dimensions separately.
+- which dataset was treated as the reference;
+- whether registration was rigid or deformable;
+- landmarks or fiducials used;
+- whether a transform is preserved in the project;
+- whether exported objects still share that coordinate system;
+- whether any meshes were moved manually after export.
+
+## Permission record
+
+I will keep permission/reuse status separate from anatomical confidence.
+
+For example, a high-quality Mimics project may be excellent for private study but still require separate approval before its source data or derived meshes can be placed in a public viewer.
